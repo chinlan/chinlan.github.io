@@ -9,6 +9,9 @@ redirect_from:
 ---
 
 [ref](http://motion-express.com/blog/20150407-ruby-require-require-relative-load)
+
 Recommended usage:
+
 require => library, gem
+
 require_relative => file

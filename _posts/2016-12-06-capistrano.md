@@ -90,6 +90,6 @@ edit: 要加 `after 'deploy:publishing', 'deploy:restart'`
 
 只有需要傳送非public的（需要權限管理的）大型靜態文件時才需要
 
-ref: http://thedataasylum.com/articles/how-rails-nginx-x-accel-redirect-work-together.html
+[ref](http://thedataasylum.com/articles/how-rails-nginx-x-accel-redirect-work-together.html)
 
-ref: http://copytime.org/posts/194
+[ref](http://copytime.org/posts/194)

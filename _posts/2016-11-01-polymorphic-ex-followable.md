@@ -202,5 +202,5 @@ def follow_news_mail(followable_id:, followable_type:)
 ~~~
 
 # Interactor Design Pattern
-Ref: https://github.com/collectiveidea/interactor
+[Ref](https://github.com/collectiveidea/interactor)
 

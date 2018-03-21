@@ -27,9 +27,9 @@ redirect_from:
 
 沒有加的話，不會被當作webpack/yarn的指令，會沒辦法成功install在webpack要安裝的資料夾裡
 
-ref:
+[ref](http://qiita.com/yoshiokaCB/items/564ed0440f0428c0009a)
 
-http://qiita.com/yoshiokaCB/items/564ed0440f0428c0009a
+[ref](http://pixelatedworks.com/articles/embracing-change-rails51-adopts-yarn-webpack-and-the-js-ecosystem/)
 
-http://pixelatedworks.com/articles/embracing-change-rails51-adopts-yarn-webpack-and-the-js-ecosystem/
+
 
