@@ -12,8 +12,9 @@ Gemfile:
 ~~~
 gem 'searchkick'
 ~~~
+
 docker-compose.yml
-~~~~~~~~~~~~~~~~~~~~~
+~~~~
 # ... other services...
 elasticsearch:
   build:
@@ -42,17 +43,20 @@ app:
     - redis
     - elasticsearch
 # ...volumes...
-~~~~~~~~~~~~~~~~
+~~~
+
 docker/elasticsearch/Dockerfile
-~~~~~~~~~~~~~~~~~
+~~~
 FROM docker.elastic.co/elasticsearch/elasticsearch:6.3.0
 
 # plugins
 RUN elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.3.0/elasticsearch-analysis-ik-6.3.0.zip
-~~~~~~~~~~~~~~~~~~
+~~~
+
 initializers/elasticsearch.rb
-~~~~~~~~~~~~~~~~~~
+~~~
 ENV['ELASTICSEARCH_URL'] = "http://elasticsearch:9200"
 # default is 'http://localhost:9200'
-~~~~~~~~~~~~~~~~~~
+~~~
+
 [ref](https://stackoverflow.com/questions/48744892/docker-rails-elastic-search)
