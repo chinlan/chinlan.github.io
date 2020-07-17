@@ -38,10 +38,10 @@ echo "Running eslint"
 
 if is_in_remote; then
   # Only check staged files (excluding deleted files) which are different from this branch's origin
-  git diff-tree -r --diff-filter=ACM --name-only @\{u\} head | xargs docker-compose exec -T frontend npx eslint manager --fix
+  git diff-tree -r --diff-filter=ACM --name-only @\{u\} head | xargs docker-compose exec -T frontend npx eslint --fix
 else
   # Only check staged files (excluding deleted files) which are different from master branch origin
-  git diff-tree -r --diff-filter=ACM --name-only origin/master head | xargs docker-compose exec -T frontend npx eslint manager --fix
+  git diff-tree -r --diff-filter=ACM --name-only origin/master head | xargs docker-compose exec -T frontend npx eslint --fix
 fi
 ~~~
 
@@ -81,3 +81,19 @@ Notes:
 
 
 [reference](https://medium.com/devnetwork/running-rubocop-only-on-modified-files-a21aed86e06d)
+
+
+
+EDIT:
+- Found a easier way to do the same thing. We can use `--staged` to git diff staged files, in this way we do not need to check if there is a remote branch to compare to in the script.
+- I want to only excute eslint with `main` and `manager` directories
+Revise to:
+~~~ sh
+#!/usr/bin/env sh
+set -e
+
+echo "Running eslint"
+
+git diff --staged --name-only --diff-filter=ACM -- main/ manager/ | xargs docker-compose exec -T frontend npx eslint --fix
+~~~
+
