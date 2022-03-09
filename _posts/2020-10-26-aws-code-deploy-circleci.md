@@ -864,6 +864,13 @@ new:
 
 References:
 https://medium.com/capital-one-tech/seamless-blue-green-deployment-using-aws-codedeploy-4c36c0bbeef4
+
+task_definitionを更新して（envとか）、terraform applyで新しいサービスが立ち上がることは、code_deployを使うならできません：
+```
+Error: Error updating ECS Service (arn:aws:ecs:ap-northeast-1:952792198138:service/ninninjob-staging/ninninjob-web-staging): InvalidParameterException: Unable to update task definition on services with a CODE_DEPLOY deployment controller. Use AWS CodeDeploy to trigger a new deployment.
+```
+現時点null_resourceを使って、code deployのdeploymentをtriggerするworkaroundを使うしかありません
+hashicorp/terraform-provider-aws#6802
 https://github.com/hashicorp/terraform-provider-aws/issues/6802
 
 Send notification of Code Deploy result to slack:

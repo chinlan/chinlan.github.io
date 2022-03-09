@@ -136,7 +136,7 @@ Check if security groups already allowed 443 port
 Because the domain is not purchased from AWS, so will need some setting in the external DNS server admin console:
 
 1. Verify the domain:
-Add the validation CNAME record in external DNS server admin console.
+Add the validation CNAME record in external DNS server admin console. -> (This seems not necessary?)
 
 2. Change the name server setting in external DNS server admin console.
 Check AWS NS record in the target hosted zone for the 4 name servers.
